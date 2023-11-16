@@ -1,0 +1,66 @@
+easy1 = 1223
+easy2 = 3231
+easy3 = 24132
+easy4 = 132443 / 343142
+easy5 = 1311322
+hard1 =
+hard2 = 133112133321113213321321132131332132113311321322112213222233223312112322322
+
+
+class Candidat:
+
+    valor: int
+    rand_valor: int
+    max_valor: int
+
+    def __init__(self, valor_inicial, max_valors, randvalue):
+        self.valor = valor_inicial
+        self.max_valor = max_valors
+        self.rand_valor = randvalue
+    def Actual(self):
+        return self.valor
+
+    def Fi(self):
+        return self.valor == self.max_valor
+
+    def Seguent(self):
+        if self.rand_valor == 0:
+            self.valor = self.valor+1
+        else:
+            self.valor = self.valor-1
+
+
+
+import random
+class Candidat:
+
+    min_valor: int
+    valor_dir: int
+    max_valor: int
+    val_actual: int
+    val_final: int
+    visitat: int
+
+    def __init__(self, valor_minim, max_valors, randvalue):
+        self.min_valor = valor_minim
+        self.max_valor = max_valors
+        self.valor_dir = randvalue
+        self.val_actual = random.randint(0, 123) % max_valors
+        self.val_final = self.val_actual
+        self.visitat = 0
+    def Actual(self):
+        return self.val_actual
+
+    def Fi(self):
+        return self.val_actual == self.val_final and self.visitat != 0
+
+    def Seguent(self):
+        self.visitat = self.visitat+1
+        if self.valor_dir == 0:
+            self.val_actual = self.val_actual+1
+            if self.val_actual == self.max_valor:
+                self.val_actual = self.min_valor
+        else:
+            self.val_actual = self.val_actual-1
+            if self.val_actual < self.min_valor:
+                self.val_actual = self.max_valor-1
