@@ -7,7 +7,7 @@ class Solucionador:
     colum1 = []
     colum2 = []
 
-    def ini_backtracking(self, columna1: [], columna2: [], profunditat: int = None):
+    def ini_backtracking(self, columna1: [], columna2: [], profunditat: int):
         """
             Funcio dedicada a inicialitzar el backtracking
 

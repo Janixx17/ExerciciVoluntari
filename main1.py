@@ -8,8 +8,8 @@ def read_file():
         :return columna1: Llista amb els valors corresponent a la x
         :return columna2: Llista amb els valors corresponent a la y
     """
-    contingut = sys.stdin.read()
-    #contingut = "(abc,ab)\n(aca,ca)\n(b,acab)\n"
+    #contingut = sys.stdin.read()
+    contingut = "(baa,b)\n(a,baa)\n(b,aa)\n"
     linees = contingut.split('\n')
     columna1 = []
     columna2 = []
@@ -32,10 +32,11 @@ def trobar_resultat(columna1, columna2):
         :return valor: el resultat en cas de de que s'hagi trobat el resultat o '' en cas contrari
     """
     solucionador1 = Solucionador()
-    solucionador2 = Solucionador()
-    trobat, valor = solucionador1.ini_backtracking(columna1, columna2, 7)
-    if not trobat:
-        trobat, valor = solucionador2.ini_backtracking(columna1, columna2, 25)
+    #solucionador2 = Solucionador()
+    trobat, valor = solucionador1.ini_backtracking(columna1, columna2, 25)
+    #trobat, valor = solucionador1.ini_backtracking(columna1, columna2, 20)
+    #if not trobat:
+    #    trobat, valor = solucionador2.ini_backtracking(columna1, columna2, 25)
 
     return trobat, valor
 

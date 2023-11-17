@@ -22,6 +22,7 @@ class Candidat:
         self.val_actual = random.randint(0, 123) % max_valors
         self.val_final = self.val_actual
         self.visitat = 0
+
     def Actual(self):
         """
             Funcio per retornar quin es el candidat actual
